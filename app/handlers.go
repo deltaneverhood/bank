@@ -19,10 +19,6 @@ type CusomerHandlers struct {
 }
 
 func (ch *CusomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Request) {
-	// customers := []Customer{
-	// 	{"Alex", "Moscow", "111121"},
-	// 	{"Maria", "Kazan", "110055"},
-	// }
 
 	customers, _ := ch.service.GetAllCustomers()
 
@@ -37,15 +33,3 @@ func (ch *CusomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Reques
 		json.NewEncoder(w).Encode(customers)
 	}
 }
-
-// func greet(w http.ResponseWriter, r *http.Request) {
-// 	fmt.Fprint(w, "Hello")
-// }
-
-// func getCustomer(w http.ResponseWriter, r *http.Request) {
-// 	vars := mux.Vars(r)
-// 	fmt.Fprint(w, vars["customer_id"])
-// }
-// func createCustomer(w http.ResponseWriter, r *http.Request) {
-// 	fmt.Fprint(w, "Post request received")
-// }
